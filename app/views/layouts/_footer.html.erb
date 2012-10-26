@@ -1,0 +1,46 @@
+<footer>
+  <p>list of all options contacts help info news social advertise and</p>
+  <div class='link-block'>
+    <h3>contacts</h3>
+    <ul>
+      <li><%= link_to 'list1' %></li>
+      <li><%= link_to 'list1' %></li>
+      <li><%= link_to 'list1' %></li>
+      <li><%= link_to 'list1' %></li>
+      <li><%= link_to 'list1' %></li>
+    </ul>
+  </div>
+  <div class='link-block'>
+    <h3>About us</h3>
+    <ul>
+      <li><%= link_to 'Site map' %></li>
+      <li><%= link_to 'list3' %></li>
+      <li><%= link_to 'list3' %></li>
+      <li><%= link_to 'list3' %></li>
+      <li><%= link_to 'list3' %></li>
+    </ul>
+  </div>
+  <div class='link-block'>
+    <h3>Site map</h3>
+    <ul>
+      <li><%= link_to 'list2' %></li>
+      <li><%= link_to 'list2' %></li>
+      <li><%= link_to 'Site map' %></li>
+      <li><%= link_to 'list2' %></li>
+      <li><%= link_to 'list2' %></li>
+    </ul>
+  </div>
+
+<nav>
+  <ul>
+    <li class='round-top-corners'><%= link_to 'Home', root_path %></li>
+    <li class='round-top-corners'><%= link_to 'Hotels', hotels_path %></li>
+    <li class='round-top-corners'><%= link_to 'Tours', tours_path %></li>
+    <li class='round-top-corners'><%= link_to 'Help' %></li>
+    <li class='round-top-corners'><%= link_to 'About us' %></li>
+  </ul>
+</nav>
+<p>
+  you are here <%= params[:controller] %>/<%= params[:action] %>
+</p>
+</footer>

@@ -1,0 +1,27 @@
+<%= div_for tour do %>
+  <div class="left">
+  <h2>
+    <%= tour.name %>
+  </h2>
+  </div>
+  <div class='right'>
+  <ul>
+    <li><%= link_to 'Show', tour %></li>
+    <li><%= link_to 'Edit', edit_tour_path(tour) %></li>
+    <li><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  </ul>
+  </div>
+  <div class="clear"></div>
+  <div class='route-info'>
+    <ul>
+      <li><%= tour.departure_date %> from <%= tour.from_city %></li>
+      <li><%= tour.return_date %> to <%= tour.to_city %></li>
+    </ul>
+  </div>
+  <p><%= tour.description %></p>
+  days in travel from and to method
+  <div><%= tour.price %></div> over ten days
+<% end %>
+
+
+

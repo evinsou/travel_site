@@ -1,0 +1,18 @@
+<%= div_for hotel do %>
+  <span>
+    <%= hotel.title %>
+  </span>
+  at
+  <span>
+    <%= hotel.city %>
+  </span>
+  <span class='rating-place right'>
+    <h2>
+      <%= hotel.rating %>
+    </h2>
+  </span>
+  <div class="clear"></div>
+  <p>
+    <%= hotel.description %>
+  </p>
+<% end %>

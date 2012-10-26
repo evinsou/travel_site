@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A go far away Agency</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id='container'>
+    <%= render 'layouts/header' %>
+    <section>
+      <aside>
+        side menu or search form
+        <section id='search-form'>
+          <header>
+            <h3>Quick Search</h3>
+            <nav>
+              <ul>
+                <li><%= link_to 'search tours' %></li>
+                <li><%= link_to 'hotels' %></li>
+                <li><%= link_to 'things' %></li>
+              </ul>
+            </nav>
+          </header>
+          <article>
+            <p>option 1</p>
+            <p>looking for option 2 </p>
+            <p>option 3</p>
+            <p> from </p>
+            <p>to</p>
+          </article>
+        </section>
+      </aside>
+      <div id='content'>
+        <header>
+          <%= content_tag :p, notice, :class => 'notice' if notice.present? %>
+          <%= content_tag :p, alert, :class => 'alert' if alert.present? %>
+        </header>
+        content  area<%= yield %>
+      </div>
+    </section>
+    <%= render 'layouts/footer' %>
+  </div>
+  <%= javascript_include_tag "application" %>
+</body>
+</html>

@@ -1,0 +1,259 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require reset
+ *= require_self
+ *= require_tree .
+ * require jquery.ui.all
+ */
+ /* begin general */
+body {
+  background-color: beige;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+pre {
+  background-color: #eeeeee;
+  padding: 10px;
+  font-size: 11px;
+}
+p {
+  padding: 5px;
+}
+a {
+  padding: 0 2px;
+  text-decoration: none;
+}
+  a:hover {
+    border: 1px dashed #fff;
+  }
+  a:visited {
+    color: blue;
+  }
+  a:active {
+    color: violet;
+  }
+.notice {
+  color: green; }
+.alert {
+  color: red; }
+.clear {
+  clear:both;}
+.handle:hover {
+  cursor: move; }
+.round-top-corners a {
+    -webkit-border-radius:0.5em 0.5em 0 0;
+    -moz-border-radius:0.5em 0.5em 0 0;
+    border-radius: 0.5em 0.5em 0 0;
+}
+.left{
+  float: left;}
+.right {
+  float: right;}
+.clearfix{
+  clear: both;
+  line-height: 0;
+  font-size: 0;}
+/*end general */
+
+#container {
+  margin: 0 auto;
+  width: 960px;
+}
+#container > header {
+  margin-top: 50px;
+}
+#container > header nav {
+  border-bottom: 2px #000 solid;
+  display: table;
+  display: block;
+  margin: 15px 0 0 0;
+  padding: 3px;
+}
+#container header nav a {
+  border: 1px solid #88e;
+  color: #88e;
+  font-size: 1.5em;
+  padding: 0 0.4em;
+}
+#container header nav a:hover {
+  color: #fff;
+  background-color: #88e;
+  padding: 0 0.4em;
+}
+#container header nav ul {
+  display: table-row;
+}
+#container header nav li {
+  display: table-cell;
+}
+#container > header #header-elements {
+  display:-moz-box; /* Firefox */
+  display:-webkit-box; /* Safari and Chrome */
+  display:box;
+}
+#container > header #site-title {
+  border:1px solid blue;
+  -moz-box-flex:3.0; /* Firefox */
+  -webkit-box-flex:3.0; /* Safari and Chrome */
+  box-flex:3.0;
+  background-color: #fff;
+  margin: 5px 250px 5px 5px;
+  padding: 5px;
+  vertical-align: top;
+}
+#container > header #login-form {
+  background-color: white;
+  border:1px solid red;
+  -moz-box-flex:1.0; /* Firefox */
+  -webkit-box-flex:1.0; /* Safari and Chrome */
+  box-flex:1.0;
+  padding: 3px;
+  margin: 15px 25px;
+}
+#container > section > aside {
+  display: inline-block;
+  vertical-align: top;
+  width: 232px;
+}
+#container > section > aside #search-form{
+  border: 2px green solid;
+  padding-top: 50px ;
+}
+#container > section > aside nav a {
+  background-color: grey;
+  border: 1px solid red;
+  color: #000;
+  font-size: 16px;
+}
+#container > section > aside,
+section #content {
+  padding: 10px 0;
+}
+section #content {
+  border-left: 1px solid #88e;
+  display: inline-block;
+  padding-left:15px;
+}
+section #content p {
+  display: inline-block;
+}
+section > #content > header {
+  height: 21px;
+  line-height: 18px;
+}
+#container > section {
+  background-color: #fff;
+  -webkit-border-radius:0 0 1.5em 1.5em;
+  -moz-border-radius: 0 0 1.5em 1.5em;
+  border-radius: 0 0 1.5em 1.5em;
+}
+#container > footer {
+  background-color: #fff;
+  -webkit-border-radius:1.5em 1.5em 0 0;
+  -moz-border-radius:1.5em 1.5em 0 0;
+  border-radius: 1.5em 1.5em 0 0;
+  margin-top: 10px;
+}
+#container > footer ul {
+  display: block;
+  margin: 0 auto;
+}
+#container > footer nav {
+  margin: 2px;
+}
+#container > footer nav li {
+  display: inline;
+  margin: 2px;
+}
+#container > footer a {
+  text-decoration: underline;
+}
+#container > footer .link-block {
+  display: inline-block;
+  padding-left: 15px;
+  width: 23%;
+}
+#container > footer .link-block li {
+  display: block;
+}
+/* general end layout */
+/* tour form*/
+/* tour form*/
+/* hotel form*/
+#content form label.string,
+#content form label.text,
+#content form label.radio_buttons,
+#content form label.date,
+#content form label.decimal,
+#content form label.email,
+#content form label.tel,
+#content form label.select {
+  display: inline-block;
+  vertical-align:top;
+  width: 105px;
+  margin: 0 5px 10px 5px;
+}
+form.simple_form {
+  display:inline;
+  margin-top:10px;
+}
+form.simple_form label {
+  width: 12px;
+  text-align: right;
+  margin: 2px 10px;
+}
+form.simple_form legend {
+  border-bottom: solid #FF4040 2px;
+  margin:5px;
+  width:100%;
+}
+.simple_form div.input {
+  width:370px;
+  margin-bottom: 10px;
+}
+.simple_form div.boolean, .simple_form input[type='submit'] {
+  margin-left: 115px;
+}
+.simple_form div.boolean label {
+  float: none;
+  margin: 0;
+}
+form.simple_form .hint{
+  display:block;
+  font-size: 12px;
+  margin-left:10px;}
+/* hotel form*/
+/* booking form*/
+/* booking form*/
+.tour {
+  margin: 10px 0;
+}
+.tour ul {
+  display: inline;
+}
+.tour li {
+  display:inline;
+}
+.route-info {
+  margin-left: 40px;
+}
+.hotel {
+  width: 204px;
+}
+.rating {
+  margin-left: 175px;
+}

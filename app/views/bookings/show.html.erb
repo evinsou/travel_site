@@ -1,0 +1,39 @@
+
+<div id="single-vacancy">
+  <section>
+    <header>
+      <h3><%= @vacancy.title %></h3>
+    </header>
+    <aside>
+      <div id="show-misc-info" class="left">
+        <ul>
+        <li><p>Job Type <%= @vacancy.job_duration %></p></li>
+        <li><p>Job Area <%= @vacancy.job_area %></p></li>
+        <li><p>Name</p>
+        <p><%= @vacancy.contact_person %></p></li>
+        <li><p>Email <%= @vacancy.email %></p></li>
+        <li><p>Phone <%= @vacancy.phone %></p></li>
+        <li><p>Company Компания</p>
+        <p><%= @vacancy.company %></p></li>
+        <% if @vacancy.is_verified? %>
+          <li><p>NO Phone call here </p></li>
+        <% end %>
+        </ul>
+      </div>
+    </aside>
+    <article>
+      <div id="show-desc-info">
+        <p>Job Description <%= @vacancy.description %></p>
+      </div>
+      <div class="clear"></div>
+    </article>
+    <% if current_user %>
+      <span class='actions'>
+      <%= link_to 'edit', edit_vacancy_path(@vacancy), :remote => true%>
+      <%= link_to 'delete', @vacancy, :confirm => 'Are you sure?',
+                                 :method => :delete,
+                                 :remote => true %>
+      </span>
+    <% end %>
+  </section>
+</div>
