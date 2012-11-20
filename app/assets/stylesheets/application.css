@@ -10,8 +10,8 @@
  *
  *= require reset
  *= require_self
+ *= require jquery.ui.tabs
  *= require_tree .
- * require jquery.ui.all
  */
  /* begin general */
 body {
@@ -256,4 +256,14 @@ form.simple_form .hint{
 }
 .rating {
   margin-left: 175px;
+}
+#tabs {
+  border: 1px solid #f0f;
+}
+
+form.hotel_search input[type='text'] {
+  width:150px;
+}
+form.tour_search input[type='text'] {
+  width:150px;
 }

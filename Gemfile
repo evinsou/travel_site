@@ -5,8 +5,8 @@ gem 'rails', '3.2.8'
 gem 'pg'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'ransack'
 #gem 'kaminari'
-#gem 'metasearch'
 #gem 'authlogic'
 #gem 'cancan'
 # Gems used only for assets and not required
@@ -18,7 +18,7 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
-  #gem 'jquery-ui-rails'
+  gem 'jquery-ui-rails'
 end
 group :development do
   gem 'rspec-rails'

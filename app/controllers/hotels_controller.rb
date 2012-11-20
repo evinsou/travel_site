@@ -38,5 +38,9 @@ class HotelsController < ApplicationController
     @hotel.destroy
     redirect_to(hotels_path)
   end
-
+  def search
+    #some code for search
+    #@search = Hotel.search(params[:q])
+    #@hotels = @search.result#(:distinct => true)
+  end
 end

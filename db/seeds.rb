@@ -41,7 +41,7 @@ tours = [Tour.create(id: 1,
 
 hotels = Hotel.create([{:id => 1,
                   :title => "golden 4 stars",
-                  :description => "some txext",
+                  :description => "awesome hotel for family",
                   :city => 'Paris',
                   :rating => 5},
                   {:id => 2,

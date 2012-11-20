@@ -1,0 +1,31 @@
+<%= search_form_for @search_tours, url: search_tours_path, method: :post do |f| %>
+  <div class="field">
+    <%= f.label :name_cont, "Title contains" %>
+    <%= f.text_field :name_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :description_cont, "Description contains" %>
+    <%= f.text_field :description_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :from_city_cont, "Rating contains stars" %>
+    <%= f.text_field :from_city_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :to_city_cont, "Price contains stars" %>
+    <%= f.text_field :to_city_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :departure_date_cont, "depart date contains stars" %>
+    <%= f.text_field :departure_date_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :return_date_cont, "return date contains stars" %>
+    <%= f.text_field :return_date_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :price_cont, "price contains " %>
+    <%= f.text_field :price_cont %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>

@@ -3,7 +3,6 @@
 <head>
   <title>A go far away Agency</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -15,20 +14,24 @@
         <section id='search-form'>
           <header>
             <h3>Quick Search</h3>
-            <nav>
-              <ul>
-                <li><%= link_to 'search tours' %></li>
-                <li><%= link_to 'hotels' %></li>
-                <li><%= link_to 'things' %></li>
-              </ul>
-            </nav>
           </header>
           <article>
-            <p>option 1</p>
-            <p>looking for option 2 </p>
-            <p>option 3</p>
-            <p> from </p>
-            <p>to</p>
+            <div id="tabs">
+              <ul>
+                  <li><a href="#tabs-1">Search a hotel</a></li>
+                  <li><a href="#tabs-2">Search a tour</a></li>
+                  <li><a href="#tabs-3">Search a ticket or booking</a></li>
+              </ul>
+              <div id="tabs-1">
+                  <p>no form for hotels<%#= render 'hotels/search' %></p>
+              </div>
+              <div id="tabs-2">
+                  <p>no form for tours<%#= render 'tours/search' %></p>
+              </div>
+              <div id="tabs-3">
+                  <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+              </div>
+            </div>
           </article>
         </section>
       </aside>
