@@ -1,18 +1,22 @@
 <%= div_for hotel do %>
-  <span>
-    <%= hotel.title %>
-  </span>
-  at
-  <span>
+  <h3>
+    <%= link_to hotel.title, hotel_path(hotel) %>
+  </h3>
+  <div class='hotel-rating'>
+    <%= hotel.rating %>
+  </div>
+  <br />
+  at/in
+  <span class='hotel-city'>
     <%= hotel.city %>
   </span>
-  <span class='rating-place right'>
-    <h2>
-      <%= hotel.rating %>
-    </h2>
-  </span>
-  <div class="clear"></div>
-  <p>
-    <%= hotel.description %>
-  </p>
+  <div class="clearfix"></div>
+  <div class='hotel-description write-up'>
+    <p>
+      <%= hotel.description %>
+    </p>
+  </div>
+  <div class='book-hotel-ref'>
+    <%= link_to 'book now', hotel_booking_path(hotel) %>
+  </div> <!-- route something like that -->
 <% end %>

@@ -9,6 +9,25 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     respond_with @booking
   end
+  def book_tour # check in irb
+    @tour = Tour.find params[:id]
+    @booking = @tour.bookings.new
+    #@booking = Booking.new
+    respond_with @booking
+  end
+  def book_hotel # check in irb
+    @tour = Tour.find params[:id]
+    @booking = @tour.bookings.new
+    #@booking = Booking.new
+    respond_with @booking
+  end
+  def create_booking
+    @tour.booking_id = @booking.id
+    @booking.tour_id = @tour.id
+    @booking.save
+    @tour.save
+    #but need to save tour or hotel booking.save
+  end
   def create
     @booking = Booking.new(params[:booking])
     if @booking.save

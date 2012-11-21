@@ -1,6 +1,8 @@
 TravAgency::Application.routes.draw do
   resources :tours do
     collection { post :search, to: 'tours#search'} #?? index
+    #booking
+    # resources :bookings
   end
   resources :hotels do
     collection { post :search, to: 'hotels#search'} #?? index

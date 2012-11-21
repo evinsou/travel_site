@@ -6,4 +6,8 @@ class Tour < ActiveRecord::Base
   has_many :comments, as: :commentable
   belongs_to :user
   belongs_to :booking
+
+  #scope :hot_tours, where((:departure_date.to_date - Time.now.to_date) < 2.weeks)
+  #scope :cheaper_than, lambda { |price| where("price < ?", price) }
+  #scope :free_places_less_than, lambda { |price| where("price < ?", price) } where free_places < 5
 end
