@@ -4,6 +4,6 @@ class Tour < ActiveRecord::Base
   validates :name, :description, :departure_date, :return_date, :from_city, :to_city, :price, presence: true
 
   has_many :comments, as: :commentable
+  has_many :bookings, as: :bookingable
   belongs_to :user
-  belongs_to :booking
 end

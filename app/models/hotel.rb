@@ -4,8 +4,8 @@ class Hotel < ActiveRecord::Base
   validates :title, :rating, :description, :city, presence: true
 
   has_many :comments, as: :commentable
+  has_many :bookings, as: :bookingable
   belongs_to :user
-  belongs_to :booking
 
   def days_between #or nights
     #self.return_date - self.departure_date
