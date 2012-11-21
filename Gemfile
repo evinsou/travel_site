@@ -7,7 +7,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'ransack'
 #gem 'kaminari'
-#gem 'authlogic'
+#gem 'devise'
 #gem 'cancan'
 # Gems used only for assets and not required
 # in production environments by default.
