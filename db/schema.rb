@@ -11,6 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121122100022) do
+ActiveRecord::Schema.define(:version => 20121122142348) do
+
+  create_table "bookings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "bookingable_id"
+    t.string   "bookingable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "hotels", :force => true do |t|
+    t.string   "title",       :null => false
+    t.text     "description", :null => false
+    t.string   "city",        :null => false
+    t.integer  "rating",      :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "tours", :force => true do |t|
+    t.string   "name",           :null => false
+    t.text     "description",    :null => false
+    t.string   "from_city",      :null => false
+    t.string   "to_city",        :null => false
+    t.date     "departure_date", :null => false
+    t.date     "return_date",    :null => false
+    t.decimal  "price",          :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
 end
