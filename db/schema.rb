@@ -11,53 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121200920) do
-
-  create_table "bookings", :force => true do |t|
-    t.string   "tour"
-    t.string   "hotel"
-    t.string   "email"
-    t.string   "person_name"
-    t.string   "phone"
-    t.integer  "number_of_adults"
-    t.integer  "number_of_children"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.integer  "user_id"
-    t.integer  "bookingable_id"
-    t.string   "bookingable_type"
-  end
-
-  create_table "comments", :force => true do |t|
-    t.string   "name"
-    t.text     "body",             :null => false
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
-
-  create_table "hotels", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "city"
-    t.integer  "rating"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "user_id"
-  end
-
-  create_table "tours", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "from_city"
-    t.string   "to_city"
-    t.date     "departure_date"
-    t.date     "return_date"
-    t.decimal  "price"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "user_id"
-  end
+ActiveRecord::Schema.define(:version => 20121122100022) do
 
 end
