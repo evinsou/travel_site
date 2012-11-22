@@ -1,4 +1,6 @@
 TravAgency::Application.routes.draw do
+  devise_for :users
+
   resources :tours do
     collection { post :search, to: 'tours#search'} #?? index
     #booking
