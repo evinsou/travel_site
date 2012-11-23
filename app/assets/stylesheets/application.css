@@ -10,6 +10,7 @@
  *
  *= require reset
  *= require_self
+ *= require foundation_and_overrides
  *= require jquery.ui.tabs
  *= require_tree .
  */

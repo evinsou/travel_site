@@ -1,18 +1,11 @@
 <span>
 <h1>Welcome to Travel Site</h1>
-
-<% if can :create Hotel %>
   <%= link_to 'new hotel', new_hotel_path %>
-<% end %>
 <br>
-<% if can :create Tour %>
   <%= link_to 'new tour', new_tour_path %>
-<% end %>
 <br>
-<% if can :create Booking %>
   <%= link_to 'hotel search', search_hotels_path %>
   <%= link_to 'tour search', search_tours_path %>
-<% end %>
 <br />
 <%= image_tag("rails.png", :alt => 'rails face', height: "142", width: "142") %>
 <section>

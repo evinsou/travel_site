@@ -1,26 +1,40 @@
 <!DOCTYPE html>
-<html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-  <title>A go far away Agency</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+	<meta charset="utf-8" />
+
+	<!-- Uncomment to make IE8 render like IE7 -->
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title><%= content_for?(:title) ? yield(:title) : "Go far away Agency" %></title>
+
+	<!-- Included CSS Files -->
+	<%= stylesheet_link_tag    "application" %>
+  <%#= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div id='container'>
     <%= render 'layouts/header' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <section>
       <div id='content'>
         <header>
           <%= content_tag :p, notice, :class => 'notice' if notice.present? %>
           <%= content_tag :p, alert, :class => 'alert' if alert.present? %>
         </header>
-        content  area<%= yield %>
+        <%= yield %>
       </div>
     </section>
     <%= render 'layouts/footer' %>
   </div>
+  <!-- Included JS Files  -->
   <%= javascript_include_tag "application" %>
 </body>
 </html>
