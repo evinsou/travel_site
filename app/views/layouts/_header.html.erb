@@ -1,21 +1,27 @@
 <header>
   <div id='header-elements'>
-  <div id='site-title'><%= link_to 'walk with me', root_path %></div>
-  <div id="login-form">
-    <div>search a word login field and label</div>
-    <div>passord field and label or links to register log in help</div>
+  <div id='site-title'><%= link_to 'Travel Agency', root_path %></div>
+  <% unless current_user %>
+    <div id="login-form">
+      <div><%= link_to 'sign_up', sign_up_path %></div>
+      <div><%= link_to 'login', login_path %></div>
+    </div>
+  <% else %>
+    <div id='user-date'>
+      you are logged in as <%= current_user.first_name %> <%= current_user.last_name %>
+      <br>
+      <%= link_to 'would you like to log out?', logout_path %>
+      <% if is_admin? current_user %>
+        <p>you are admin</p>
+      <% end %>
+    </div>
+  <% end %>
   </div>
-  </div>
-
   <nav>
     <ul>
       <li class='round-top-corners'><%= link_to 'Home', root_path %></li>
       <li class='round-top-corners'><%= link_to 'Hotels', hotels_path %></li>
       <li class='round-top-corners'><%= link_to 'Tours', tours_path %></li>
-      <li class='round-top-corners'><%= link_to 'Weather' %></li>
-      <li class='round-top-corners'><%= link_to 'Roads and maps' %></li>
-      <li class='round-top-corners'><%= link_to 'Rent a car' %></li>
-      <li class='round-top-corners'><%= link_to 'Help' %></li>
       <li class='round-top-corners'><%= link_to 'About us' %></li>
     </ul>
   </nav>

@@ -5,14 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-#Time
-=begin
-Time.parse('2010 10 5 220001')
-Time.new('2010 01 5 122134')
-Time.local('2010 07 5 121212')
-Time.gm('2010 10 5 121212')
-Time.utc('2010 5 12 121212')
-=end
 
 tours = [Tour.create(id: 1,
                 name: 'wonder kiev paris',
@@ -41,7 +33,7 @@ tours = [Tour.create(id: 1,
 
 hotels = Hotel.create([{:id => 1,
                   :title => "golden 4 stars",
-                  :description => "some txext",
+                  :description => "awesome hotel for family",
                   :city => 'Paris',
                   :rating => 5},
                   {:id => 2,
@@ -54,8 +46,3 @@ hotels = Hotel.create([{:id => 1,
                   :description => "some text",
                   :city => 'Wien',
                   :rating => 3}])
-=begin
-reservation
-user
-and what else
-=end

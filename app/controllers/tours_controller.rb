@@ -1,4 +1,7 @@
 class ToursController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
+  respond_to :html, :json, :js
+
   # GET /tours
   # GET /tours.json
   def index
@@ -75,9 +78,11 @@ class ToursController < ApplicationController
     @tour = Tour.find(params[:id])
     @tour.destroy
 
-    respond_to do |format|
-      format.html { redirect_to tours_url }
-      format.json { head :no_content }
-    end
+    respond_with @tour
+  end
+  def search
+    #some code for search
+    #@search = Tour.search(params[:q])
+    #@tours = @search.result#(:distinct => true)
   end
 end

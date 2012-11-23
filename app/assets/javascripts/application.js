@@ -12,5 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
+//= require jquery-ui
+//= require jquery.ui.tabs
+//= require foundation
 //= require_tree .
-// require jquery.ui.all
+
+$(function() {
+  $( "#tabs" ).tabs();
+});
+$(function() {
+  //alert('help');
+});

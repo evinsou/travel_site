@@ -1,4 +1,5 @@
 class HotelsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
   respond_to :html, :json, :js
 
   def index
@@ -38,5 +39,9 @@ class HotelsController < ApplicationController
     @hotel.destroy
     redirect_to(hotels_path)
   end
-
+  def search
+    #some code for search
+    #@search = Hotel.search(params[:q])
+    #@hotels = @search.result#(:distinct => true)
+  end
 end

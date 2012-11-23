@@ -1,0 +1,19 @@
+<%= search_form_for @search_hotels, url: search_hotels_path, method: :post do |f| %>
+  <div class="field">
+    <%= f.label :title_cont, "Title contains" %>
+    <%= f.text_field :title_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :description_cont, "Description contains" %>
+    <%= f.text_field :description_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :rating_cont, "Rating contains stars" %>
+    <%= f.text_field :rating_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :city_cont, "Price contains stars" %>
+    <%= f.text_field :city_cont %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>

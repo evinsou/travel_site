@@ -1,16 +1,39 @@
 class BookingsController < ApplicationController
+  #before_filter :authenticate_user!
   respond_to :html, :json, :js
 
   def index
-    @bookings = Booking.all
+    #@bookings = Booking.all
+    @bookings = current_user.bookings
     respond_with @bookings
   end
   def new
-    @booking = Booking.new
+    #@booking = Booking.new
+    @booking = current_user.bookings.new
     respond_with @booking
   end
+  def book_tour # check in irb
+    @tour = Tour.find params[:id]
+    @booking = @tour.bookings.new
+    #@booking = Booking.new
+    respond_with @booking
+  end
+  def book_hotel # check in irb
+    @tour = Tour.find params[:id]
+    @booking = @tour.bookings.new
+    #@booking = Booking.new
+    respond_with @booking
+  end
+  def create_booking
+    @tour.booking_id = @booking.id
+    @booking.tour_id = @tour.id
+    @booking.save
+    @tour.save
+    #but need to save tour or hotel booking.save
+  end
   def create
-    @booking = Booking.new(params[:booking])
+    #@booking = Booking.new(params[:booking])
+    @booking = current_user.bookings.find params[:id]
     if @booking.save
       redirect_to bookings_path, :notice => 'new booking is added'
     else
@@ -18,7 +41,8 @@ class BookingsController < ApplicationController
     end
   end
   def edit
-    @booking = Booking.find(params[:id])
+    #@booking = Booking.find(params[:id])
+    @booking = current_user.bookings.find params[:id]
     respond_with @booking
   end
   def update
@@ -30,11 +54,13 @@ class BookingsController < ApplicationController
     end
   end
   def show
-    @booking = Booking.find(params[:id])
+    #@booking = Booking.find(params[:id])
+    @booking = current_user.bookings.find params[:id]
     respond_with @booking
   end
   def destroy
-    @booking = Booking.find(params[:id])
+    #@booking = Booking.find(params[:id])
+    @booking = current_user.bookings.find params[:id]
     @booking.destroy
     redirect_to(bookings_path)
   end

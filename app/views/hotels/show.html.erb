@@ -1,2 +1,29 @@
-<h1>Hotels#show</h1>
-<p>Find me in app/views/hotels/show.html.erb</p>
+<div id="single-hotel">
+  <section>
+    <header>
+      <h3><%= @hotel.title %></h3>
+      <br />
+      <p>at <%= @hotel.city %></p>
+    </header>
+    <article>
+      <div id="hotel-rating" class="">
+        <p>at <%= @hotel.rating %></p>
+      </div>
+      <div id="hotel-description">
+        <p>Description <%= simple_format @hotel.description %></p>
+      </div>
+      <div class="clearfix"></div>
+    </article>
+    <% if current_user %>
+      <span class='actions'>
+        <% if can? :update, @hotel %>
+          <%= link_to 'edit', edit_hotel_path(@hotel) %>|
+        <% end %>
+        <% if can? :destroy, @hotel %>
+          <%= link_to 'delete', @hotel, :confirm => 'Are you sure?', :method => :delete %>
+        <% end %>
+      </span>
+    <% end %>
+  </section>
+</div>
+<%= link_to 'Back', hotels_path %>
