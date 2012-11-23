@@ -1,11 +1,11 @@
 <div id="<%= controller.action_name %>">
-<% unless @reservations %>
-  <div id="reservations">
-    <%= render @reservations %>
-    <%= paginate @reservations, remote: true %>
-  </div>
-<% else %>
-  <h2> Пока не добавлено ни одного отеля </h2>
-  <p>извините, но пока никто не оставил ни одной вакансии для разработчика на языке ruby.</p>
-<% end %>
+  <% unless @bookings %>
+    <div id="bookings">
+      <%= render @bookings %>
+      <%= paginate @bookings %>
+    </div>
+  <% else %>
+    <h2> Ничего не забронировано </h2>
+    <p>Вы еще ничего не забронировали. Выберите тур или отель и забронируйте</p>
+  <% end %>
 </div>

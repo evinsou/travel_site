@@ -13,7 +13,7 @@ TravAgency::Application.routes.draw do
     collection { post :search, to: 'hotels#search'}
     resources :bookings
   end
-  resources :bookings
+  #resources :bookings
   root to: 'welcome#index'
 
   unless Rails.application.config.consider_all_requests_local

@@ -1,26 +1,13 @@
 <%= div_for booking do %>
   <section>
     <header>
-      <h3><%= link_to "#{ booking.title.humanize}", booking_path(booking)%></h3>
+      <%= booking.tour.name if booking.tour %>
+      <%= booking.hotel.title if booking.hotel %>
     </header>
-    <aside>
-      <div class="misc-info border5">
-        <ul>
-          <li><p><%= booking.hotel %></p></li>
-          <li><p><%= booking.tour %></p></li>
-          <li><p><%= booking.email %></p></li>
-          <li><p><%= booking.person_name %></p></li>
-          <li><p><%= booking.phone %></p></li>
-          <li><p>Posted <%=booking.created_at.strftime("%d.%m.%y") %> </p></li>
-        </ul>
-      </div>
-    </aside>
-      <span class='actions'>
-      <%= link_to 'edit', edit_booking_path(booking)%>
-      <%= link_to 'delete', booking, :confirm => 'Are you sure?',
-                                     :method => :delete,
-                                     :remote => true %>
-      </span>
+    <article>
+      <%= render 'hotels/hotel' if booking.hotel %>
+      <%= render 'tours/tour' if booking.tour %>
+    </article>
   </section>
 <% end %>
 
