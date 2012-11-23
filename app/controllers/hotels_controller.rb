@@ -1,4 +1,5 @@
 class HotelsController < ApplicationController
+  #before_filter :authenticate_user!, except: [:index, :show]
   respond_to :html, :json, :js
 
   def index

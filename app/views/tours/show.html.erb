@@ -17,18 +17,16 @@
       </p>
       <div class="clearfix"></div>
     </article>
-    <% if current_user.is_a User %>
+    <% if current_user %>
       <span class='actions'>
-      <%= link_to 'Edit', edit_tour_path(@tour) %> |
-      <%= link_to 'Delete', @tour, :confirm => 'Are you sure?',
-                                    :method => :delete %>
+        <% if can? :update, @tour %>
+          <%= link_to 'edit', edit_tour_path(@tour) %>|
+        <% end %>
+        <% if can? :destroy, @tour %>
+          <%= link_to 'delete', @tour, confirm: 'Are you sure?', method: :delete %>
+        <% end %>
       </span>
     <% end %>
   </section>
 </div>
 <%= link_to 'Back', tours_path %>
-<h3>Comments</h3>
-<div id="comments">
-<%= render @tour.comments %>
-</div>
-<%= render :file => 'comments/new' %>

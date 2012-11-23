@@ -6,7 +6,7 @@
     <%= hotel.rating %>
   </div>
   <br />
-  at/in
+  at
   <span class='hotel-city'>
     <%= hotel.city %>
   </span>
@@ -17,6 +17,6 @@
     </p>
   </div>
   <div class='book-hotel-ref'>
-    <%= link_to 'book now', hotel_booking_path(hotel) %>
-  </div> <!-- route something like that -->
+    <%= link_to 'book now', new_hotel_booking_path(hotel) %>
+  </div>
 <% end %>

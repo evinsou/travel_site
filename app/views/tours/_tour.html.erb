@@ -15,7 +15,7 @@
         <li>to <%= tour.return_date %> and <%= tour.to_city %></li>
       </ul>
     </div>
-    <div class='book-link'><%= link_to 'book now', tour_booking_path(tour) %></div>
+    <div class='book-link'><%= link_to 'book now', new_tour_booking_path(tour) %></div>
   </div>
   <div class='route-info'>
     <p><%= tour.description %></p>
