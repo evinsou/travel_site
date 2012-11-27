@@ -1,15 +1,23 @@
-<%= div_for hotel do %>
-  <h3>
-    <%= link_to hotel.title, hotel_path(hotel) %>
-  </h3>
-  <div class='hotel-rating'>
-    <%= hotel.rating %>
+<%= div_for hotel, class: 'seven columns centered' do %>
+  <div class='hotel-side two columns'>
+    <div class='hotel-rating'>
+      <%= hotel.rating %>
+    </div>
+    <div class='admin-actions'>
+      <ul>
+        <li><%= link_to 'Edit', edit_hotel_path(hotel) %></li>
+        <li><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    </div>
   </div>
-  <br />
-  at
-  <span class='hotel-city'>
-    <%= hotel.city %>
-  </span>
+  <div class='hotel-main five columns'>
+    <h3>
+      <%= link_to hotel.title, hotel_path(hotel) %>
+    </h3>
+  </div>
+  <div class='hotel-city'>
+    at <%= hotel.city %>
+  </div>
   <div class="clearfix"></div>
   <div class='hotel-description write-up'>
     <p>

@@ -20,8 +20,9 @@
     <% if current_user %>
       <span class='actions'>
         <% if can? :update, @tour %>
-          <%= link_to 'edit', edit_tour_path(@tour) %>|
+          <%= link_to 'edit', edit_tour_path(@tour) %>
         <% end %>
+        |
         <% if can? :destroy, @tour %>
           <%= link_to 'delete', @tour, confirm: 'Are you sure?', method: :delete %>
         <% end %>

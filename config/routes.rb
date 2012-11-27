@@ -6,14 +6,17 @@ TravAgency::Application.routes.draw do
   end
 
   resources :tours do
-    collection { post :search, to: 'tours#search'}
+    collection { get :search, to: 'tours#search'}
     resources :bookings
   end
   resources :hotels do
-    collection { post :search, to: 'hotels#search'}
+    collection { get :search, to: 'hotels#search'}
     resources :bookings
   end
-  #resources :bookings
+  resources :users, only: [] do
+    resources :bookings
+  end
+
   root to: 'welcome#index'
 
   unless Rails.application.config.consider_all_requests_local

@@ -1,4 +1,4 @@
-<%= search_form_for @search_hotels, url: search_hotels_path, method: :post do |f| %>
+<%= search_form_for @search_hotels, url: search_hotels_path, method: :get do |f| %>
   <div class="field">
     <%= f.label :title_cont, "Title contains" %>
     <%= f.text_field :title_cont %>

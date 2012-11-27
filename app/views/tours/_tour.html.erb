@@ -1,5 +1,9 @@
 <%= div_for tour do %>
-  <div class='side'>
+  <div class='tour-side'>
+    <div class=''>
+      <div class='tour-lenght'>over ten days</div>
+      <div class="tour-price"><%= tour.price %></div>
+    </div>
     <div class='admin-actions'>
       <ul>
         <li><%= link_to 'Edit', edit_tour_path(tour) %></li>
@@ -9,17 +13,16 @@
   </div>
   <div class='tour-main'>
     <h2><%= link_to tour.name, tour_path(tour) %></h2>
-    <div class='route-info'>
+    <div class='tour-route-info'>
       <ul>
         <li>from <%= tour.departure_date %> and <%= tour.from_city %></li>
         <li>to <%= tour.return_date %> and <%= tour.to_city %></li>
       </ul>
     </div>
-    <div class='book-link'><%= link_to 'book now', new_tour_booking_path(tour) %></div>
+    <div class='book-tour-ref'><%= link_to 'book now', new_tour_booking_path(tour) %></div>
   </div>
-  <div class='route-info'>
+  <div class='route-desc'>
     <p><%= tour.description %></p>
-    days in travel from and to method
-    <div><%= tour.price %></div><div class='time-lenght'>over ten days</div>
+    <p>days in travel from and to method</p>
   </div>
 <% end %>

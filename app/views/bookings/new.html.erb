@@ -1,7 +1,5 @@
-<div id="<%= params[:action] %>">
-
-<h1>Новая резервация</h1>
-
+<h1>New booking</h1>
+<%= render :partial => 'hotels/hotel', :locals => { :hotel => @hotel } if params[:hotel_id] %>
+<%= render :partial => 'tours/tour', :locals => { :tour => @tour } if params[:tour_id] %>
 <%= render 'form'%>
-
-</div>
+<%= back_to params %>
