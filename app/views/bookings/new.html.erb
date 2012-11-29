@@ -1,5 +1,13 @@
-<h1>New booking</h1>
-<%= render :partial => 'hotels/hotel', :locals => { :hotel => @hotel } if params[:hotel_id] %>
-<%= render :partial => 'tours/tour', :locals => { :tour => @tour } if params[:tour_id] %>
-<%= render 'form'%>
-<%= back_to params %>
+<div class='row'>
+  <div class='twelve columns'>
+    <h1>New booking</h1>
+    <div class='row'>
+        <%= link_to 'hotel search', search_hotels_path %> <br />
+        <%= link_to 'tour search', search_tours_path %>
+    </div>
+    <%= render :partial => 'hotels/hotel', :locals => { :hotel => @bookingable } if params[:hotel_id] %>
+    <%= render :partial => 'tours/tour', :locals => { :tour => @bookingable } if params[:tour_id] %>
+    <%= render 'form'%>
+    <%= back_to params %>
+  </div>
+</div>

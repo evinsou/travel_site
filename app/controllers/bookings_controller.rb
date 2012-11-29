@@ -9,11 +9,6 @@ class BookingsController < ApplicationController
   end
   def new
     @booking = @bookingable.bookings.new
-    if params[:hotel_id]
-      @hotel = Hotel.find params[:hotel_id]
-    elsif params[:tour_id]
-      @tour = Tour.find params[:tour_id]
-    end
     respond_with @booking
   end
   def create
@@ -29,7 +24,7 @@ class BookingsController < ApplicationController
     respond_with @booking
   end
   def update
-    @booking = @bookingable.bookings.find
+    @booking = @bookingable.bookings.find params[:id]
     if @booking.update_attributes(params[:booking])
       redirect_to [@bookingable, :bookings], :notice => 'booking  updated'
     else

@@ -21,22 +21,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id='container' class='twelve columns centered'>
-    <%= render 'layouts/header' %>
-    <section>
-      <div class='three columns'>
-        side content like search form or some menu
+  <div id='container' class='container'>
+    <div class='row'>
+      <div class='twelve columns centered'>
+      <%= render 'layouts/header' %>
+      <section class='row'>
+        <div class='three columns'>
+          side content like search form or some menu
+        </div>
+        <div id='content' class='nine columns'>
+          <header>
+            <%= content_tag :p, notice, :class => ['notice', 'columns'] if notice.present? %>
+            <%= content_tag :p, alert, :class => %w(alert columns) if alert.present? %>
+          </header>
+          <%= yield %>
+        </div>
+      </section>
+      <%= render 'layouts/footer' %>
       </div>
-      <div id='content' class='nine columns'>
-        <header>
-          <%= content_tag :p, notice, :class => ['notice', 'columns'] if notice.present? %>
-          <%= content_tag :p, alert, :class => %w(alert columns) if alert.present? %>
-        </header>
-        <%= yield %>
-      </div>
-    </section>
-    <div class='clearfix'></div>
-    <%= render 'layouts/footer' %>
+    </div>
   </div>
   <!-- Included JS Files  -->
   <%= javascript_include_tag "application" %>

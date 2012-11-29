@@ -1,28 +1,36 @@
-<header>
-  <div id='header-elements'>
-  <div id='site-title'><%= link_to 'Travel Agency', root_path %></div>
-  <% unless current_user %>
-    <div id="login-form">
-      <div><%= link_to 'sign_up', sign_up_path %></div>
-      <div><%= link_to 'login', login_path %></div>
+<header class='row'>
+  <div class='twelve columns'>
+    <div id='header-elements' class='row'>
+      <div id='site-title' class='nine columns'>
+      <h1><%= link_to 'Travel Agency', root_path %></h1>
+      </div>
+      <div class='three columns'>
+        <% unless current_user %>
+          <div id="login-form">
+            <p>
+            <%= link_to 'sign_up', sign_up_path %>
+            <%= link_to 'login', login_path %>
+            </p>
+          </div>
+        <% else %>
+          <div id='user-date'>
+            you are logged in as <%= current_user.first_name %> <%= current_user.last_name %>
+            <br>
+            <%= link_to 'would you like to log out?', logout_path %>
+            <% if is_admin? current_user %>
+              <p>you are admin</p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% else %>
-    <div id='user-date'>
-      you are logged in as <%= current_user.first_name %> <%= current_user.last_name %>
-      <br>
-      <%= link_to 'would you like to log out?', logout_path %>
-      <% if is_admin? current_user %>
-        <p>you are admin</p>
-      <% end %>
-    </div>
-  <% end %>
+      <nav class='row'>
+        <ul class='nav-bar twelve columns'>
+          <li class='active three columns'><%= link_to 'Home', root_path, class: 'active' %></li>
+          <li class='three columns'><%= link_to 'Hotels', hotels_path %></li>
+          <li class='three columns'><%= link_to 'Tours', tours_path %></li>
+          <li class='three columns'><%= link_to 'About us' %></li>
+        </ul>
+      </nav>
   </div>
-  <nav>
-    <ul>
-      <li class='round-top-corners'><%= link_to 'Home', root_path %></li>
-      <li class='round-top-corners'><%= link_to 'Hotels', hotels_path %></li>
-      <li class='round-top-corners'><%= link_to 'Tours', tours_path %></li>
-      <li class='round-top-corners'><%= link_to 'About us' %></li>
-    </ul>
-  </nav>
 </header>

@@ -1,13 +1,20 @@
 
-<%= div_for @booking %>
-  <%= render 'tours/_tour', locals: @booking.tour if @booking.tour %>
-  <%= render 'hotels/_hotel', locals: @booking.hotel if @booking.hotel %>
-    <span class='actions'>
-    <% if can? :update, @booking %>
-      <%= link_to 'edit', edit_vacancy_path(@booking)%>
-    <% end %>
-    <% if can? :destroy, @booking %>
-      <%= link_to 'delete', @booking, :confirm => 'Are you sure?', :method => :delete %>
-    <% end %>
-    </span>
+<%= div_for @booking, class: 'row' %>
+  <div class='twelve columns'>
+    <%= render 'tours/_tour', locals: @booking.tour if @booking.tour %>
+    <%= render 'hotels/_hotel', locals: @booking.hotel if @booking.hotel %>
+    <div class='row'>
+      <div class='twelve columns'>
+        <span class='actions'>
+          <% if can? :update, @booking %>
+            <%= link_to 'edit', edit_vacancy_path(@booking)%>
+          <% end %>
+          |
+          <% if can? :destroy, @booking %>
+            <%= link_to 'delete', @booking, :confirm => 'Are you sure?', :method => :delete %>
+          <% end %>
+        </span>
+      </div>
+    </div>
+  </div>
 <% end %>

@@ -1,33 +1,41 @@
-<div id="single-tour">
-  <section>
-    <header>
-      <h3><%= @tour.name %></h3>
-    </header>
-    <article>
-      <ul>
-        <li><p><%= @tour.from_city %><%= @tour.to_city %></p></li>
-        <li><p><%= @tour.departure_date %><%= @tour.return_date %></p></li>
-      </ul>
-      <div id="tour-description">
-        <p>Description <%= simple_format @tour.description %></p>
+<div id="single-tour" class='row'>
+  <section class='twelve columns'>
+    <div class='row'>
+      <header>
+        <h3><%= @tour.name %></h3>
+      </header>
+    </div>
+    <article class='row'>
+      <div class='twelve columns'>
+        <div clas='row'>
+          <ul>
+            <li><p><%= @tour.from_city %><%= @tour.to_city %></p></li>
+            <li><p><%= @tour.departure_date %><%= @tour.return_date %></p></li>
+          </ul>
+        </div>
+        <div class='row'>
+          <div id="tour-description">
+            <p>Description <%= simple_format @tour.description %></p>
+          </div>
+        </div>
+        <p><b>Price:</b><%= @tour.price %></p>
       </div>
-      <p>
-        <b>Price:</b>
-        <%= @tour.price %>
-      </p>
       <div class="clearfix"></div>
     </article>
-    <% if current_user %>
-      <span class='actions'>
-        <% if can? :update, @tour %>
-          <%= link_to 'edit', edit_tour_path(@tour) %>
+    <div class='row'>
+      <div class='twelve columns'>
+        <% if current_user %>
+          <span class='actions'>
+            <% if can? :update, @tour %>
+              <%= link_to 'edit', edit_tour_path(@tour) %>
+            <% end %>
+            <% if can? :destroy, @tour %>
+              | <%= link_to 'delete', @tour, confirm: 'Are you sure?', method: :delete %>
+            <% end %>
+          </span>
         <% end %>
-        |
-        <% if can? :destroy, @tour %>
-          <%= link_to 'delete', @tour, confirm: 'Are you sure?', method: :delete %>
-        <% end %>
-      </span>
-    <% end %>
+      </div>
+    </div>
   </section>
 </div>
 <%= link_to 'Back', tours_path %>

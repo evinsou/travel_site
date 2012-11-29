@@ -1,17 +1,21 @@
-<%= div_for tour do %>
-  <div class='tour-side'>
-    <div class=''>
-      <div class='tour-lenght'>over ten days</div>
-      <div class="tour-price"><%= tour.price %></div>
-    </div>
+<%= div_for tour, class: 'row' do %>
+  <div class='tour-side three columns'>
+    <div class='tour-lenght'>over ten days</div>
+    <div class="tour-price"><%= tour.price %></div>
+    <% if current_user %>
     <div class='admin-actions'>
       <ul>
+        <% if can? :update, tour %>
         <li><%= link_to 'Edit', edit_tour_path(tour) %></li>
+        <% end %>
+        <% if can? :destroy, tour %>
         <li><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <% end %>
       </ul>
     </div>
+    <% end %>
   </div>
-  <div class='tour-main'>
+  <div class='tour-main nine columns'>
     <h2><%= link_to tour.name, tour_path(tour) %></h2>
     <div class='tour-route-info'>
       <ul>
@@ -19,10 +23,10 @@
         <li>to <%= tour.return_date %> and <%= tour.to_city %></li>
       </ul>
     </div>
+    <div class='route-desc'>
+      <p><%= tour.description %></p>
+      <p>days in travel from and to method</p>
+    </div>
     <div class='book-tour-ref'><%= link_to 'book now', new_tour_booking_path(tour) %></div>
-  </div>
-  <div class='route-desc'>
-    <p><%= tour.description %></p>
-    <p>days in travel from and to method</p>
   </div>
 <% end %>

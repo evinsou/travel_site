@@ -1,17 +1,27 @@
-<footer>
-  <p>list of all options contacts help info news social advertise and</p>
-  <nav>
-    <ul>
-      <li class='round-top-corners'><%= link_to 'Home', root_path %></li>
-      <li class='round-top-corners'><%= link_to 'Hotels', hotels_path %></li>
-      <li class='round-top-corners'><%= link_to 'Tours', tours_path %></li>
-      <li class='round-top-corners'><%= link_to 'Help' %></li>
-      <li class='round-top-corners'><%= link_to 'About us' %></li>
-    </ul>
-  </nav>
-  <p>
-    <% if Rails.env.development? %>
-    you are here <%= params[:controller] %>/<%= params[:action] %>
-    <% end %>
-  </p>
+<footer class='row'>
+  <div class='twelve columns'>
+    <div class='row'>
+      <div class='twelve columns'>
+        <p>list of all options contacts help info news social advertise and</p>
+        <nav class='row'>
+          <ul class='twelve columns'>
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Hotels', hotels_path %></li>
+            <li><%= link_to 'Tours', tours_path %></li>
+            <li><%= link_to 'Help' %></li>
+            <li><%= link_to 'About us' %></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class='row'>
+      <p>
+        <% if Rails.env.development? %> <br />
+        you are here <%= params[:controller] %>/<%= params[:action] %> <br />
+        <%= debug params %> <br />
+        <%= params.inspect %>
+        <% end %>
+      </p>
+    </div>
+  </div>
 </footer>

@@ -1,30 +1,34 @@
-<div id="single-hotel">
-  <section>
-    <header>
-      <h3><%= @hotel.title %></h3>
-      <br />
-      <p>at <%= @hotel.city %></p>
-    </header>
-    <article>
-      <div id="hotel-rating" class="">
+<div id="single-hotel" class='row'>
+  <section class='twelve columns'>
+    <div class='row'>
+      <header class='twelve columns'>
+        <h3><%= @hotel.title %></h3>
+        <br />
+        <p>at <%= @hotel.city %></p>
+      </header>
+    </div>
+    <article class='row'>
+      <div id="hotel-rating" class="two columns">
         <p>at <%= @hotel.rating %></p>
       </div>
-      <div id="hotel-description">
+      <div id="hotel-description" class='ten columns'>
         <p>Description <%= simple_format @hotel.description %></p>
       </div>
-      <div class="clearfix"></div>
     </article>
-    <% if current_user %>
-      <span class='actions'>
-        <% if can? :update, @hotel %>
-          <%= link_to 'edit', edit_hotel_path(@hotel) %>
+    <div class='row'>
+      <div class='twelve columns'>
+        <% if current_user %>
+          <span class='actions'>
+            <% if can? :update, @hotel %>
+              <%= link_to 'edit', edit_hotel_path(@hotel) %>
+            <% end %>
+            <% if can? :destroy, @hotel %>
+              | <%= link_to 'delete', @hotel, :confirm => 'Are you sure?', :method => :delete %>
+            <% end %>
+          </span>
         <% end %>
-        |
-        <% if can? :destroy, @hotel %>
-          <%= link_to 'delete', @hotel, :confirm => 'Are you sure?', :method => :delete %>
-        <% end %>
-      </span>
-    <% end %>
+      </div>
+    </div>
   </section>
 </div>
 <%= link_to 'Back', hotels_path %>

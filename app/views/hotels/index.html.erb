@@ -1,6 +1,20 @@
-<h1>Hotels</h1>
-<p>that we can to you</p>
-<div class="rating">rating</div>
-<%= render @hotels %>
-
-<%= link_to 'new hotel', new_hotel_path %>
+<div class='row'>
+  <div class='twelve columns'>
+    <div class='row'>
+      <div class = 'twelve columns'>
+        <h2>Hotels</h2>
+    <p>that we can to you</p>
+    <div class="rating">rating</div>
+    <p>no place for rating</p>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='twelve columns'>
+        <%= render @hotels %>
+      </div>
+    </div>
+  </div>
+  <%#= if can? :create, @hotel %>
+    <%= link_to 'new hotel', new_hotel_path %>
+  <%# end %>
+</div>

@@ -15,6 +15,7 @@
  *= require_tree .
  */
  /* begin general */
+/*
 body {
   background-color: beige;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -68,8 +69,9 @@ a {
   clear: both;
   line-height: 0;
   font-size: 0;}
+*/
 /*end general */
-
+/*
 #container {
   margin: 0 auto;
   width: 960px;
@@ -237,9 +239,11 @@ form.simple_form .hint{
   display:block;
   font-size: 12px;
   margin-left:10px;}
+*/
 /* hotel form*/
 /* booking form*/
 /* booking form*/
+/*
 .tour {
   margin: 10px 0;
 }
@@ -267,4 +271,5 @@ form.hotel_search input[type='text'] {
 }
 form.tour_search input[type='text'] {
   width:150px;
+  */
 }
